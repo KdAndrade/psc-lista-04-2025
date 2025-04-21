@@ -25,11 +25,14 @@ public class PaisCrescimento2 {
                 paisB = scanner.nextDouble();
                 if (paisB <= 0) {
                     System.out.println("População inválida. Tente novamente.");
+                } else if (paisA >= paisB) {
+                    System.out.println("A população do país A deve ser menor que a do país B. Tente novamente.");
+                    paisB = -1;
                 }
             } while (paisB <= 0);
 
             do {
-                System.out.println("Digite a taxa de crescimento do país A (em decimal):");
+                System.out.println("Digite a taxa de crescimento do país A (em decimal, ex: 0.03 para 3%):");
                 taxaCrescimentoA = scanner.nextDouble();
                 if (taxaCrescimentoA <= 0) {
                     System.out.println("Taxa de crescimento inválida. Tente novamente.");
@@ -37,7 +40,7 @@ public class PaisCrescimento2 {
             } while (taxaCrescimentoA <= 0);
 
             do {
-                System.out.println("Digite a taxa de crescimento do país B (em decimal):");
+                System.out.println("Digite a taxa de crescimento do país B (em decimal, ex: 0.02 para 2%):");
                 taxaCrescimentoB = scanner.nextDouble();
                 if (taxaCrescimentoB <= 0) {
                     System.out.println("Taxa de crescimento inválida. Tente novamente.");
@@ -51,8 +54,8 @@ public class PaisCrescimento2 {
             }
 
             System.out.println("O país A ultrapassará o país B em " + anos + " anos.");
-            System.out.printf("População do país A: %.2f%n", paisA);
-            System.out.printf("População do país B: %.2f%n", paisB);
+            System.out.printf("População final do país A: %.2f%n", paisA);
+            System.out.printf("População final do país B: %.2f%n", paisB);
 
             System.out.println("Deseja executar novamente? (S/N)");
             scanner.nextLine();
